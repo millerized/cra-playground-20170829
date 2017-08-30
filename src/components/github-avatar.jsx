@@ -18,6 +18,6 @@ export class GitHubAvatar extends Component {
                 className={styles.avatar}
                 alt={username}
                 src={`https://github.com/${username}.png`} />
-            );
+        );
     }
 }

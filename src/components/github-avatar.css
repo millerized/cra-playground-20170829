@@ -7,6 +7,6 @@
     animation-direction: alternate;
 }
 
-.avatar:first-of-type {
+.avatar:nth-child(odd) {
     animation-direction: alternate-reverse;
 }

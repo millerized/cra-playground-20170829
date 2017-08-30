@@ -16,6 +16,9 @@ export class App extends Component {
 
                 <div className={styles.avatars}>
                     <GitHubAvatar username='millerized' />
+
+                    <PlusSymbolEmoji />
+
                     <GitHubAvatar username='StephenKoller' />
                 </div>
 
@@ -43,3 +46,11 @@ const Header = () => {
         </h2>
     );
 };
+
+const PlusSymbolEmoji = () => (
+    <span
+        role='img'
+        aria-label='plus sign'
+        className={styles.plusEmoji}
+    >➕</span>
+);

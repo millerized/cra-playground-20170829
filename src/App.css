@@ -28,6 +28,10 @@
     align-items: center;
 }
 
+.plusEmoji {
+    font-size: 55px;
+}
+
 
 @keyframes logo-spin {
   from { transform: rotate(0deg); }

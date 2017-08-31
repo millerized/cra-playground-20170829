@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
+import {TextField} from 'material-ui';
+
 import logo from './logo.svg';
 import styles from './App.css';
 
 import {GitHubAvatar} from './components/github-avatar.jsx';
 
 export class App extends Component {
+    state = {
+        username: '',
+    }
+
     render() {
+        const {username} = this.state;
+
         return (
             <div className={styles.App}>
                 <div className={styles.header}>
@@ -20,11 +28,21 @@ export class App extends Component {
                     <PlusSymbolEmoji />
 
                     <GitHubAvatar username='StephenKoller' />
+
+                    {username && <PlusSymbolEmoji />}
+                    {username && <GitHubAvatar username={username} />}
                 </div>
 
-                <p className={styles.intro}>
-                    To get started, edit <code>src/App.js</code> and save to reload.
-                </p>
+                <div>
+                    <TextField
+                        label='GitHub Username'
+                        value={username}
+                        onChange={(e) => { this.setState({username: e.target.value}); }}/>
+
+                    <p className={styles.intro}>
+                        To get started, edit <code>src/App.js</code> and save to reload.
+                    </p>
+                </div>
             </div>
         );
     }

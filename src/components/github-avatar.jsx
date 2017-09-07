@@ -8,14 +8,18 @@ export class GitHubAvatar extends Component {
     // https://facebook.github.io/react/docs/typechecking-with-proptypes.html
     static propTypes = {
         username: PropTypes.string.isRequired,
+        onClick: PropTypes.func.isRequired,
+        isActive: PropTypes.bool.isRequired,
     }
 
     render() {
-        const {username} = this.props;
+        const {onClick, isActive, username} = this.props;
+        const classNames = `${styles.avatar} ${isActive ? styles.active : undefined}`;
 
         return (
             <img
-                className={styles.avatar}
+                onClick={onClick}
+                className={classNames}
                 alt={username}
                 src={`https://github.com/${username}.png`} />
         );

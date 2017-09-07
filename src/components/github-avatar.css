@@ -3,9 +3,15 @@
     width: 30%;
     max-width: 340px;
     height: auto;
+    transition: box-shadow 400ms ease;
+    cursor: pointer;
 
     composes: spin from '../App.css';
     animation-direction: alternate;
+}
+
+.active {
+    box-shadow: 0 0 0px 4px #00f87f;
 }
 
 .avatar:nth-of-type(odd) {
